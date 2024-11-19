@@ -22,7 +22,76 @@
         background: m.$grey;
         padding: 15px;
         border-radius: 10px;
-        box-shadow: ;
+        box-shadow: 0 2px 3px 2px rgba(116, 116, 116, 0.334);
+      }
+    }
+
+    .videoContainer {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      background: m.$grey;
+      padding: 2rem;
+      border-radius: 10px;
+
+      .videoCard {
+        flex: 1 1 30rem;
+        position: relative;
+        padding-bottom: 10px;
+
+        &:hover video {
+          transform: scale(1.05);
+          opacity: 0.8;
+          transition: all 0.3s ease;
+        }
+
+        video {
+          width: 100%;
+          border: 1.5rem solid m.$bluePrincipal;
+          border-radius: 10px;
+          box-shadow: m.$boxShadow;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .content {
+      flex: 1 1 25rem;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        font-size: 32px;
+        color: m.$babyBlue;
+        // text-shadow: 2px 2px 1px rgba(167, 164, 164, 0.6);
+      }
+
+      p {
+        font-size: 1rem;
+        color: m.$bluePrincipal;
+        padding: 1rem 0;
+        padding-top: 1rem;
+        line-height: 1.5;
+      }
+
+      .btn {
+        padding: 10px 30px;
+        font-size: 25px;
+        font-weight: 900;
+        background-color: m.$bluePrincipal;
+        color: m.$white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: m.$yellow;
+          transform: scale(1.05);
+        }
       }
     }
   }

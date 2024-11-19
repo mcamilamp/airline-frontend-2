@@ -46,7 +46,7 @@
       padding: 32px;
       gap: 16px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
 
       .singleDestination {
         overflow: hidden;
@@ -160,6 +160,19 @@
             height: 100%;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popular {
+    .secContainer {
+      .mainContent {
+        padding: 32px;
+        gap: 16px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
       }
     }
   }
