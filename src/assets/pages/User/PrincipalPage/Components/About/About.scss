@@ -1,0 +1,29 @@
+@use "../../../../../styles/main.scss" as m;
+
+.about {
+  margin: 10px 100px 0 100px;
+  .secContainer {
+    .title {
+      color: m.$bluePrincipal;
+      line-height: 15px;
+      padding-bottom: 20px;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .mainContent {
+      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .singleItem {
+        margin-top: 10px;
+        text-align: center;
+        background: m.$grey;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: ;
+      }
+    }
+  }
+}

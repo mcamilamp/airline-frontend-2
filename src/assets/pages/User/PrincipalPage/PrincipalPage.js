@@ -4,6 +4,8 @@ import NavBar from "./../../../Components/NavBar/NavBar";
 import Footer from "./../../../Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import FamDest from "./Components/FamousDestinations/FamDest";
+import Offer from "./Components/Offer/Offer";
+import About from "./Components/About/About";
 
 function PrincipalPage() {
   return (
@@ -11,6 +13,8 @@ function PrincipalPage() {
       <NavBar />
       <Home />
       <FamDest />
+      <Offer />
+      <About />
       {/* <Footer />  */}
     </>
   );
