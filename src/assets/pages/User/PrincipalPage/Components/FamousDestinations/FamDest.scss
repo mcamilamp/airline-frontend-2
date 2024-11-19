@@ -1,0 +1,161 @@
+@use "../../../../../styles/main.scss" as m;
+
+.popular {
+  padding-top: 120px;
+
+  .secContainer {
+    .secHeader {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+
+      .textDiv {
+        .secTitle {
+          color: m.$black;
+          line-height: 15px;
+          padding-bottom: 8px;
+        }
+
+        p {
+          font-size: 13px;
+          color: m.$black;
+          font-weight: 500;
+        }
+      }
+      .iconsDiv {
+        gap: 16px;
+        .icon {
+          padding: 10px;
+          background: m.$yellow;
+          border-radius: 50%;
+          font-size: 39px;
+          &:hover {
+            background: m.$darkYellow;
+            color: m.$white;
+          }
+        }
+      }
+    }
+
+    .mainContent {
+      padding: 32px;
+      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      .singleDestination {
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: m.$boxShadow;
+
+        .destImage {
+          height: auto;
+          width: 100%;
+          position: relative;
+          overflow: hidden;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+
+          .overlayInfo {
+            position: absolute;
+            display: flex;
+            align-items: flex-start;
+            padding: 0;
+            // padding: 8px 28px;
+            justify-content: center;
+            flex-direction: column;
+            background: linear-gradient(
+              rgba(0, 0, 0, 0.846),
+              rgba(0, 0, 0, 0.759)
+            );
+            bottom: 0;
+            width: 100%;
+            // height: 100%;
+            height: 0;
+            overflow: hidden;
+
+            h3 {
+              color: m.$white;
+              font-weight: 600;
+            }
+            p {
+              color: m.$white;
+              opacity: 0.7;
+              font-size: 13px;
+            }
+
+            .icon {
+              position: absolute;
+              right: 10px;
+              bottom: 10px;
+              padding: 8px;
+              background: m.$babyBlue;
+              font-size: 39px;
+              border-radius: 50%;
+              color: m.$white;
+              transition: 0.3s ease;
+
+              &:hover {
+                background: m.$white;
+                border: 3px solid m.$babyBlue;
+                color: m.$bluePrincipal;
+              }
+            }
+          }
+        }
+
+        .destFooter {
+          padding: 16px;
+          .number {
+            font-size: 32px;
+            font-weight: 700;
+            color: m.$bluePrincipal;
+            position: relative;
+            width: max-content;
+            &::after {
+              content: "";
+              position: absolute;
+              background: m.$yellow;
+              top: 45%;
+              right: -210%;
+              height: 8px;
+              width: 65px;
+              border-radius: 16px;
+            }
+          }
+
+          .destText {
+            justify-content: space-between;
+
+            h6 {
+              color: m.$bluePrincipal;
+              font-size: 15px;
+            }
+
+            .flex {
+              font-size: 16px;
+              font-weight: 600;
+              align-items: flex-start;
+              transform: translateY(5px);
+
+              .icon {
+                color: m.$bluePrincipal;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .overlayInfo {
+            overflow: visible;
+            padding: 16px 20px;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

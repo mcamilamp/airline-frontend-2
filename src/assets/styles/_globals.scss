@@ -1,0 +1,101 @@
+@use "./variables" as m;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.3s;
+  font-family: m.$principalFont;
+}
+
+body {
+  background-color: m.$grey;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.section {
+  padding: 64px 0 32px;
+}
+
+.containerr {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.icon {
+  font-size: 32px;
+  cursor: pointer;
+  color: m.$bluePrincipal;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.btn {
+  padding: 6.4px 24px;
+  background: m.$babyBlue;
+  border: none;
+  outline: none;
+  border-radius: 48px;
+  cursor: pointer;
+}
+
+.btn2 {
+  padding: 7.4px 28px;
+  background: m.$bluePrincipal;
+  border: none;
+  outline: none;
+  border-radius: 35px;
+  cursor: pointer;
+}
+
+.btn a {
+  color: m.$white;
+  font-weight: 500;
+}
+
+.btn:hover a {
+  color: m.$white;
+}
+
+.secIntro {
+  max-width: 70%;
+  text-align: center;
+  margin: 0 auto 32px;
+}
+
+.secIntro .secTitle {
+  color: m.$black;
+  line-height: 24px;
+  padding-bottom: 8px;
+}
+
+.secIntro p {
+  font-size: 13px;
+  color: m.$black;
+  font-weight: 500;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+}
+
+input {
+  font-size: 100%;
+}

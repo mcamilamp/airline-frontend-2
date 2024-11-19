@@ -1,0 +1,161 @@
+@use "../../styles/main.scss" as m;
+
+.navBarSection {
+  .header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    width: 100%;
+    padding: 16px;
+    z-index: 1000;
+
+    &.scrolled {
+      background: m.$babyBlue;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      color: m.$white;
+
+      .loginBtn,
+      .logupBtn {
+        background: m.$bluePrincipal;
+      }
+    }
+
+    .logoDiv {
+      .logo {
+        color: m.$white;
+        font-weight: 500;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          color: m.$white;
+          font-size: 25px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .navBar {
+        background: m.$grey;
+        position: absolute;
+        height: max-content;
+        padding: 16px;
+        width: 100%;
+        top: 0;
+        left: -500%;
+        box-shadow: 0 2px 4px rgba(209, 209, 209, 0.984);
+        transition: 0.5s ease;
+        z-index: 1000;
+
+        .navList {
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          margin: auto;
+
+          .navItem {
+            padding: 16px 0;
+
+            .navLink {
+              color: m.$bluePrincipal;
+              font-size: 15px;
+              font-weight: 500;
+
+              &:hover {
+                color: m.$babyBlue;
+              }
+            }
+          }
+
+          .headerBtns {
+            .btn {
+              a {
+                font-weight: 600;
+
+                &:hover {
+                  color: m.$bluePrincipal;
+                }
+              }
+            }
+            .loginBtn {
+              background: none;
+              border: 1px solid m.$bluePrincipal;
+
+              a {
+                color: m.$babyBlue;
+              }
+              &:hover {
+                background: m.$babyBlue;
+                border: none;
+                a {
+                  color: m.$white;
+                }
+              }
+            }
+          }
+        }
+
+        .closeNavBar {
+          position: absolute;
+          top: 16px;
+          right: 24px;
+          color: m.$bluePrincipal;
+          &:hover .icon {
+            color: m.$babyBlue;
+          }
+        }
+      }
+
+      .activeNavbar {
+        left: 0;
+      }
+    }
+
+    .toggleNavBar {
+      .icon {
+        font-size: 25px;
+        color: m.$white;
+        &:hover {
+          color: m.$babyBlue;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .toggleNavBar,
+  .closeNavBar {
+    display: none;
+  }
+
+  .header {
+    padding: 24px 32px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    .navItem {
+      .navLink {
+        color: m.$white;
+        padding: 0 7.2px;
+        font-size: 15px;
+        font-weight: 400;
+        &:hover {
+          color: m.$babyBlue;
+        }
+      }
+
+      .btn {
+        margin-left: 0;
+
+        a {
+          color: m.$babyBlue;
+        }
+      }
+    }
+  }
+}

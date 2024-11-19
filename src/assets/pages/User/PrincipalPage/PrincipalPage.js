@@ -1,0 +1,19 @@
+import React from "react";
+import "../../../styles/_globals.scss";
+import NavBar from "./../../../Components/NavBar/NavBar";
+import Footer from "./../../../Components/Footer/Footer";
+import Home from "./Components/Home/Home";
+import FamDest from "./Components/FamousDestinations/FamDest";
+
+function PrincipalPage() {
+  return (
+    <>
+      <NavBar />
+      <Home />
+      <FamDest />
+      {/* <Footer />  */}
+    </>
+  );
+}
+
+export default PrincipalPage;
