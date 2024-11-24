@@ -2,8 +2,8 @@
 
 .home {
   height: 80vh;
-  background: linear-gradient(rgba(33, 33, 33, 0.522), rgba(33, 33, 33, 0.522)),
-    url("../../../../../img/home.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.522), rgba(0, 0, 0, 0.522)),
+    url("../../../../../img/home4.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,8 +18,9 @@
   .secContainer {
     .homeText {
       color: m.$white;
-      text-align: left;
+      text-align: center;
       padding-left: 2rem;
+      margin-top: 5rem;
       margin-bottom: 1.5rem;
 
       .title {
@@ -29,8 +30,9 @@
         line-height: 40px;
       }
       .subTitle {
-        font-size: 15px;
+        font-size: 17px;
         opacity: 0.9;
+        font-weight: 500;
         padding: 10px 0;
       }
       .btn {
@@ -84,8 +86,9 @@
           width: 100%;
 
           &::placeholder {
-            opacity: 0.5;
+            // opacity: 0.5;
             font-weight: 400;
+            color: m.$babyBlue;
           }
           &:focus {
             outline: none;

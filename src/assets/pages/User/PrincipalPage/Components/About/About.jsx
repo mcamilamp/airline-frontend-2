@@ -40,7 +40,8 @@ function About() {
 
           <div className="content">
             <h3>
-              Discover the world with us: your next adventure begins on board.
+              Discover the world <span>with us</span>: your next adventure
+              begins on board.
             </h3>
             <p>
               Explore unique destinations with comfort, safety and the best

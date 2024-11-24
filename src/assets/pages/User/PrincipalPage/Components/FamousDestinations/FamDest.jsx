@@ -3,6 +3,7 @@ import "../FamousDestinations/FamDest.scss";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
+import { FaStar } from "react-icons/fa";
 
 import img1 from "../../../../../img/1.jpg";
 import img2 from "../../../../../img/2.jpg";
@@ -16,15 +17,12 @@ function FamDest() {
         <div className="secHeader flex">
           <div className="textDiv">
             <h2 className="secTitle">Popular Destination</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
-              eos reprehenderit fuga dolor aliquam suscipit aut.
-            </p>
+            <p>The most chosen destinations, now closer to you.</p>
           </div>
-          <div className="iconsDiv flex">
+          {/* <div className="iconsDiv flex">
             <FaArrowLeft className="icon leftIcon" />
             <FaArrowRight className="icon" />
-          </div>
+          </div> */}
         </div>
 
         <div className="mainContent grid">
@@ -32,10 +30,10 @@ function FamDest() {
             <div className="destImage">
               <img src={img1} alt="Image title" />
               <div className="overlayInfo">
-                <h3>Some text</h3>
+                <h3>South Korea</h3>
                 <p>
-                  Lorem ipsum quod quaerat, nam labore exercitationem laborum
-                  odit ea ipsam!
+                  Explore a country where tradition and technology meet in
+                  perfect harmony.
                 </p>
                 <FaArrowRight className="icon" />
               </div>
@@ -47,9 +45,8 @@ function FamDest() {
                 <h6>South Korea</h6>
                 <span className="flex">
                   <span className="dot">
-                    <GoDotFill className="icon" />
+                    <FaStar className="icon" />
                   </span>
-                  Dot
                 </span>
               </div>
             </div>
@@ -58,10 +55,10 @@ function FamDest() {
             <div className="destImage">
               <img src={img2} alt="Image title" />
               <div className="overlayInfo">
-                <h3>Some text</h3>
+                <h3>Switzerland</h3>
                 <p>
-                  Lorem ipsum quod quaerat, nam labore exercitationem laborum
-                  odit ea ipsam!
+                  Majestic mountains, crystalline lakes and unforgettable
+                  chocolate.
                 </p>
                 <FaArrowRight className="icon" />
               </div>
@@ -73,9 +70,8 @@ function FamDest() {
                 <h6>Switzerland</h6>
                 <span className="flex">
                   <span className="dot">
-                    <GoDotFill className="icon" />
+                    <FaStar className="icon" />
                   </span>
-                  Dot
                 </span>
               </div>
             </div>
@@ -84,10 +80,9 @@ function FamDest() {
             <div className="destImage">
               <img src={img3} alt="Image title" />
               <div className="overlayInfo">
-                <h3>Some text</h3>
+                <h3>Italy</h3>
                 <p>
-                  Lorem ipsum quod quaerat, nam labore exercitationem laborum
-                  odit ea ipsam!
+                  Live the magic of Tuscany, Rome and Venice in one destination.
                 </p>
                 <FaArrowRight className="icon" />
               </div>
@@ -99,9 +94,8 @@ function FamDest() {
                 <h6>Italy</h6>
                 <span className="flex">
                   <span className="dot">
-                    <GoDotFill className="icon" />
+                    <FaStar className="icon" />
                   </span>
-                  Dot
                 </span>
               </div>
             </div>
@@ -110,10 +104,10 @@ function FamDest() {
             <div className="destImage">
               <img src={img4} alt="Image title" />
               <div className="overlayInfo">
-                <h3>Some text</h3>
+                <h3>USA</h3>
                 <p>
-                  Lorem ipsum quod quaerat, nam labore exercitationem laborum
-                  odit ea ipsam!
+                  From the skyscrapers of New York to the most iconic national
+                  parks.
                 </p>
                 <FaArrowRight className="icon" />
               </div>
@@ -125,9 +119,8 @@ function FamDest() {
                 <h6>USA</h6>
                 <span className="flex">
                   <span className="dot">
-                    <GoDotFill className="icon" />
+                    <FaStar className="icon" />
                   </span>
-                  Dot
                 </span>
               </div>
             </div>

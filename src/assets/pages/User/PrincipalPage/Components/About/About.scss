@@ -8,7 +8,7 @@
       line-height: 15px;
       padding-bottom: 20px;
       text-align: center;
-      font-size: 25px;
+      font-size: 35px;
       font-weight: 700;
     }
 
@@ -67,6 +67,10 @@
         font-size: 32px;
         color: m.$babyBlue;
         // text-shadow: 2px 2px 1px rgba(167, 164, 164, 0.6);
+
+        span {
+          color: m.$bluePrincipal;
+        }
       }
 
       p {

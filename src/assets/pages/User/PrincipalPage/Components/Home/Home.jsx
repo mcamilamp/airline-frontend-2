@@ -1,5 +1,6 @@
 import React from "react";
 import "./../Home/Home.scss";
+import { LuPlaneTakeoff } from "react-icons/lu";
 
 function Home() {
   return (
@@ -8,12 +9,11 @@ function Home() {
         <div className="homeText">
           <h1 className="title">Nothing to lose, and a world to see</h1>
           <p className="subTitle">
-            Lorem ipsum dolor sit, amet consecte elit. Accusamus earum
-            cupiditate. Qui!
+            Safe, fast and comfortable flights so you can enjoy every moment.
           </p>
 
           <button className="btn">
-            <a href="#">Explore Now</a>
+            <a href="#">Book Your Flight</a>
           </button>
         </div>
 

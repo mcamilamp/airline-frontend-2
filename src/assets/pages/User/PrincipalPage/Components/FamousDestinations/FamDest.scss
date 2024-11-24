@@ -17,12 +17,13 @@
         justify-content: center;
         .secTitle {
           color: m.$black;
-          line-height: 15px;
-          padding-bottom: 8px;
+          line-height: 8px;
+          padding-bottom: 10px;
+          font-size: 35px;
         }
 
         p {
-          font-size: 13px;
+          font-size: 15px;
           color: m.$black;
           font-weight: 500;
         }

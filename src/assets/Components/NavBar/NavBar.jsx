@@ -36,7 +36,7 @@ function NavBar() {
           <a href="#" className="logo">
             <h1 className="flex">
               <FaPlane className="icon" />
-              AirPlane
+              AirLine
             </h1>
           </a>
         </div>

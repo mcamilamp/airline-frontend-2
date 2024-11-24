@@ -1,0 +1,74 @@
+@use "../../styles/main.scss" as m;
+
+.footer {
+  background: m.$bluePrincipal;
+  padding: 2rem 0;
+
+  .secContainer {
+    gap: 1.5rem;
+    text-align: center;
+    .footerLogo {
+      padding-bottom: 0.5rem;
+      .logo {
+        margin-left: 2rem;
+        color: m.$white;
+        font-weight: 500;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          font-size: 30px;
+          color: m.$white;
+          margin-right: 0.5rem;
+          margin-left: 3rem;
+        }
+      }
+    }
+    .socials {
+      gap: 0.5rem;
+      margin: auto;
+      justify-content: center;
+
+      .icon {
+        font-size: 40px;
+        background: m.$babyBlue;
+        border-radius: 50%;
+        padding: 8px;
+        color: m.$white;
+        &:hover {
+          background: m.$yellow;
+        }
+      }
+    }
+
+    .footerLinks {
+      display: grid;
+      row-gap: 0.2rem;
+
+      .linkTitle {
+        padding-bottom: 0.5rem;
+        color: m.$white;
+        font-weight: 700;
+      }
+
+      li {
+        color: m.$white;
+        &:hover {
+          transform: translateX(10px);
+          a {
+            color: m.$babyBlue;
+          }
+        }
+      }
+
+      a,
+      .phone,
+      .email {
+        color: m.$white;
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+}
