@@ -1,0 +1,82 @@
+@use "../../../../../styles/main.scss" as m;
+
+.container {
+  margin: 4rem;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 3rem;
+    font-size: 30px;
+  }
+
+  .items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    .item {
+      display: grid;
+      grid-template-columns: 2fr 4fr;
+      background: m.$grey;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px 2px rgba(136, 136, 136, 0.334);
+      overflow: hidden;
+      padding: 0;
+
+      &:hover {
+        transform: translateY(-7px);
+      }
+
+      .itemImage {
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+
+      .itemText {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+
+        .title {
+          text-align: left;
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        .price {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+
+          p {
+            // background: m.$white;
+            // padding: 10px;
+            // border-radius: 10px;
+          }
+
+          span {
+            margin-left: 0.5rem;
+            font-weight: 600;
+          }
+
+          .icon {
+            margin-left: 1rem;
+            color: m.$babyBlue;
+            background: m.$white;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 35px;
+          }
+        }
+      }
+    }
+  }
+}

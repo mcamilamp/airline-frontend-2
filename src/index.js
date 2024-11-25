@@ -5,6 +5,7 @@ import App from "./App";
 import Login from "./assets/pages/Login/Login";
 import PrincipalPage from "./assets/pages/User/PrincipalPage/PrincipalPage";
 import FamDest from "./assets/pages/User/PrincipalPage/Components/FamousDestinations/FamDest";
+import BookFlight from "./assets/pages/User/BookFlight/BookFlight";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/principalPage",
     element: <PrincipalPage />,
+  },
+  {
+    path: "BookFlight",
+    element: <BookFlight />,
   },
 ]);
 
