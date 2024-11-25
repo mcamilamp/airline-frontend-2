@@ -6,6 +6,7 @@ import Login from "./assets/pages/Login/Login";
 import PrincipalPage from "./assets/pages/User/PrincipalPage/PrincipalPage";
 import FamDest from "./assets/pages/User/PrincipalPage/Components/FamousDestinations/FamDest";
 import BookFlight from "./assets/pages/User/BookFlight/BookFlight";
+import OfferPage from "./assets/pages/User/Offers/OfferPage";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +22,12 @@ const router = createBrowserRouter([
     element: <PrincipalPage />,
   },
   {
-    path: "BookFlight",
+    path: "/BookFlight",
     element: <BookFlight />,
+  },
+  {
+    path: "/OfferPage",
+    element: <OfferPage />,
   },
 ]);
 

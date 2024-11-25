@@ -35,7 +35,6 @@ function FamDest() {
                   Explore a country where tradition and technology meet in
                   perfect harmony.
                 </p>
-                <FaArrowRight className="icon" />
               </div>
             </div>
 
@@ -60,7 +59,6 @@ function FamDest() {
                   Majestic mountains, crystalline lakes and unforgettable
                   chocolate.
                 </p>
-                <FaArrowRight className="icon" />
               </div>
             </div>
 
@@ -84,7 +82,6 @@ function FamDest() {
                 <p>
                   Live the magic of Tuscany, Rome and Venice in one destination.
                 </p>
-                <FaArrowRight className="icon" />
               </div>
             </div>
 
@@ -109,7 +106,6 @@ function FamDest() {
                   From the skyscrapers of New York to the most iconic national
                   parks.
                 </p>
-                <FaArrowRight className="icon" />
               </div>
             </div>
 

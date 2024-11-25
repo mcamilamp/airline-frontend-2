@@ -1,5 +1,9 @@
 import React from "react";
 import "./../Home/Home.scss";
+import bookFlight from "../../../BookFlight/BookFlight";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { LuPlaneTakeoff } from "react-icons/lu";
 
 function Home() {
@@ -13,7 +17,7 @@ function Home() {
           </p>
 
           <button className="btn">
-            <a href="#">Book Your Flight</a>
+            <Link to="/bookflight">Book Your Flight</Link>
           </button>
         </div>
 

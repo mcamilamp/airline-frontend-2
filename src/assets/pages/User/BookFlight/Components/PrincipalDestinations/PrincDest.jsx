@@ -50,7 +50,7 @@ const items = [
 
 function PrincDest() {
   return (
-    <section className="container">
+    <section className="container" id="principalDestinations">
       <h2>Main destinations</h2>
       <div className="items">
         {items.map(({ image, title, price }, index) => (
