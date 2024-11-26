@@ -7,7 +7,6 @@ const apiClient = axios.create({
 
 apiClient.interceptors.request.use(config => {
     const auth = new Auth()
-    console.log(`authenticated(${auth.isAuthenticated()}): ${auth.getAuthToken()}`)
     if (auth.isAuthenticated()) {
         config.headers.Authorization = `Bearer ${auth.getAuthToken()}`
     }
