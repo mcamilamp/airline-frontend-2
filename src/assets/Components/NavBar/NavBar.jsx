@@ -12,10 +12,12 @@ function NavBar() {
   const isSpecialPage =
     location.pathname.startsWith("/Tickets") ||
     location.pathname === "/Profile";
+
   const [isScrolled, setIsScrolled] = useState(false);
+
   let isAuthenticated = false;
 
-  const auth = new Auth()
+  const auth = new Auth();
   if (auth.isAuthenticated()) {
     isAuthenticated = false;
   }
@@ -68,12 +70,17 @@ function NavBar() {
               </Link>
             </li>
             <div className="headerBtns flex">
-              {
-                  isAuthenticated &&
-                  (<button className="btn loginBtn">
-                    <Link to="/login">Sign in</Link>
-                  </button>)
-              }
+              {!isAuthenticated && (
+                <button className="btn loginBtn">
+                  <Link to="/login">Sign in</Link>
+                </button>
+              )}
+
+              {isAuthenticated && (
+                <button className="btn profileBtn">
+                  <Link to="/Profile">Profile</Link>
+                </button>
+              )}
               {/*
               <button className="btn logupBtn">
                 <Link to="/login">Sign Up</Link>
