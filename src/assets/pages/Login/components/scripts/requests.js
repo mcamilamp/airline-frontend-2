@@ -2,7 +2,7 @@ import axios from "axios";
 import Auth from "./auth";
 
 const apiClient = axios.create({
-    baseURL: "http://localhost:8080",
+    baseURL: "http://localhost:8080/api/v1",
 })
 
 apiClient.interceptors.request.use(config => {
@@ -17,6 +17,7 @@ apiClient.interceptors.request.use(config => {
 })
 
 export class Requests {
+    api = apiClient
     getApiClient() {
         return apiClient
     }

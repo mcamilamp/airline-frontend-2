@@ -1,26 +1,32 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import "../DestSection/DestSection.scss";
 import { Link } from "react-router-dom";
+import {Requests} from "../../../Login/components/scripts/requests";
+
+const req = new Requests()
+
+async function getAllFlights() {
+  await req.api.get("/flights").then((res) => res.data)
+}
+
+async function addFlights(flight) {
+  await req.api.post("/flights", flight)
+}
 
 function DestSection() {
-  const [destinations, setDestinations] = useState([
-    {
-      id: 1,
-      origin: "New York",
-      destination: "London",
-      departureTime: "10:00 AM",
-      departureDate: "2024-12-01",
-      duration: "7h",
-    },
-    {
-      id: 2,
-      origin: "Paris",
-      destination: "Tokyo",
-      departureTime: "8:00 PM",
-      departureDate: "2024-12-05",
-      duration: "13h",
-    },
-  ]);
+  const [destinations, setDestinations] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await getAllFlights()
+        setDestinations(result)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    fetchData()
+  })
 
   const [newDestination, setNewDestination] = useState({
     origin: "",
@@ -44,10 +50,8 @@ function DestSection() {
       newDestination.departureDate &&
       newDestination.duration
     ) {
-      setDestinations([
-        ...destinations,
-        { id: destinations.length + 1, ...newDestination },
-      ]);
+
+      setDestinations(getAllFlights);
       setNewDestination({
         origin: "",
         destination: "",
