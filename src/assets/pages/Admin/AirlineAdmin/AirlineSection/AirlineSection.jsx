@@ -1,8 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import "../AirportSection/AirportSection.scss";
+import React from "react";
+import "../../AirportsAdmin/AirportSection/AirportSection.scss";
 
-function AirportSection() {
+function AirlineSection() {
   return (
     <section className="airport-section">
       <aside className="sidebar">
@@ -44,9 +44,9 @@ function AirportSection() {
           <div className="info-a">
             <ul>
               <li>
-                <p>Id Airport: </p>
-                <p>City: </p>
-                <p>Country: </p>
+                <p>Id Airline: </p>
+                <p>Code Airline: </p>
+                <p>Country of origin: </p>
                 <p>Name: </p>
                 <button href="#" className="btnDelete">
                   Delete Airport
@@ -56,18 +56,18 @@ function AirportSection() {
           </div>
         </div>
         <div className="airport-form">
-          <h2>Add new Airport</h2>
+          <h2>Add new Airline</h2>
           <form action="">
             <label htmlFor="">
-              Id Airport: <input type="text" />
+              Id Airline: <input type="text" />
             </label>
 
             <label htmlFor="">
-              City: <input type="text" />
+              Code Airline: <input type="text" />
             </label>
 
             <label htmlFor="">
-              Country: <input type="text" />
+              Country of origin: <input type="text" />
             </label>
 
             <label htmlFor="">
@@ -75,7 +75,7 @@ function AirportSection() {
             </label>
 
             <button type="submit" className="btn">
-              Add Airport
+              Add Airline
             </button>
           </form>
         </div>
@@ -84,4 +84,4 @@ function AirportSection() {
   );
 }
 
-export default AirportSection;
+export default AirlineSection;

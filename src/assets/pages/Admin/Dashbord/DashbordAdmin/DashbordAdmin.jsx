@@ -27,6 +27,9 @@ function DashbordAdmin() {
               <Link to="/Airport">Airports</Link>
             </li>
             <li>
+              <Link to="/Airline">Airlines</Link>
+            </li>
+            <li>
               <Link to="/login" className="btn-login">
                 Sign Up
               </Link>

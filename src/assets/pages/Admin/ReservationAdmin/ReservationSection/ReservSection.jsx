@@ -32,13 +32,6 @@ function ReservSection() {
       reservationDate: "2024-01-16",
       numberOfPassengers: 10,
     },
-    {
-      id: 5,
-      customer: "Sky Wilson",
-      flight: "Flight 177",
-      reservationDate: "2024-12-26",
-      numberOfPassengers: 34,
-    },
   ]);
 
   return (
@@ -63,6 +56,9 @@ function ReservSection() {
             </li>
             <li>
               <Link to="/Airport">Airports</Link>
+            </li>
+            <li>
+              <Link to="/Airline">Airlines</Link>
             </li>
             <li>
               <Link to="/login" className="btn-login">
@@ -95,6 +91,11 @@ function ReservSection() {
                     <p>
                       Number of Passengers:{" "}
                       <span>{reservation.numberOfPassengers}</span>
+                    </p>
+                    <p>
+                      <button href="#" className="btnDelete">
+                        Delete Reservation
+                      </button>
                     </p>
                   </li>
                 ))}

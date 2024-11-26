@@ -16,6 +16,7 @@ import ReservationAdmin from "./assets/pages/Admin/ReservationAdmin/ReservationA
 import DestAdmin from "./assets/pages/Admin/DestAdmin/DestAdmin";
 import SignUpForm from "./assets/pages/Login/components/signoutForm/SignUpForm";
 import Airport from "./assets/pages/Admin/AirportsAdmin/Airport";
+import Airline from "./assets/pages/Admin/AirlineAdmin/Airline";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
   {
     path: "/Airport",
     element: <Airport />,
+  },
+  {
+    path: "/Airline",
+    element: <Airline />,
   },
 ]);
 
