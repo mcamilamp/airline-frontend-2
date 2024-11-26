@@ -6,7 +6,7 @@ import {jwtDecode} from 'jwt-decode';
 function isTokenExpired(token) {
     try {
         const decoded = jwtDecode(token);
-        const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
+        const currentTime = Math.floor(Date.now()); // Current time in milliseconds
         return decoded.exp < currentTime; // True if expired
     } catch (error) {
         console.error("Invalid token:", error);
@@ -55,7 +55,9 @@ export default class Auth {
     getUser() {
         return JSON.parse(window.localStorage.getItem("auth-user"))
     }
-
-    ensureAuthenticated(req) {
+    getAuthHeader() {
+        return {
+            Authorization: `Bearer ${this.getAuthToken()}`
+        }
     }
 }

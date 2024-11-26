@@ -17,7 +17,7 @@ function NavBar() {
 
   const auth = new Auth()
   if (auth.isAuthenticated()) {
-    isAuthenticated = false;
+    isAuthenticated = true;
   }
 
   useEffect(() => {
@@ -69,9 +69,11 @@ function NavBar() {
             </li>
             <div className="headerBtns flex">
               {
-                  isAuthenticated &&
+                  !isAuthenticated &&
                   (<button className="btn loginBtn">
                     <Link to="/login">Sign in</Link>
+                  </button>) || (<button className="btn loginBtn">
+                    <Link to="/Profile">Profile</Link>
                   </button>)
               }
               {/*
