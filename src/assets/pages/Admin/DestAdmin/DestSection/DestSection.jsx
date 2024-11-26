@@ -10,11 +10,11 @@ async function getAllFlights() {
 }
 
 async function addFlight(flight) {
-  return req.api.post("/flights", flight).then((res) => res.data)
+  return req.api.post("/flights", flight).then((res) => res.data);
 }
 
 async function getAirport(code) {
-  return req.api.get("/airports/find/code/" + code).then((res) => res.data)
+  return req.api.get("/airports/find/code/" + code).then((res) => res.data);
 }
 
 function flightMapper(flight) {
@@ -25,7 +25,7 @@ function flightMapper(flight) {
     departureTime: flight.departureTime,
     departureDate: flight.departureDate,
     duration: flight.duration,
-  }
+  };
 }
 
 function DestSection() {
@@ -34,7 +34,7 @@ function DestSection() {
     const fetchData = async () => {
       try {
         const result = await getAllFlights();
-        console.log(result)
+        console.log(result);
         setDestinations(result.map(flightMapper));
       } catch (error) {
         console.log(error);
@@ -66,21 +66,23 @@ function DestSection() {
       newDestination.departureDate &&
       newDestination.duration
     ) {
-      const body = {...newDestination}
-      body.origin =  await getAirport(newDestination.origin)
-      body.destination = await getAirport(newDestination.destination)
-      console.log(body)
+      const body = { ...newDestination };
+      body.origin = await getAirport(newDestination.origin);
+      body.destination = await getAirport(newDestination.destination);
+      console.log(body);
 
-      addFlight(body).then(flight => getAllFlights()).then(flights => {
-        setDestinations(flights.map(flightMapper));
-        setNewDestination({
-          origin: "",
-          destination: "",
-          departureTime: "",
-          departureDate: "",
-          duration: "",
+      addFlight(body)
+        .then((flight) => getAllFlights())
+        .then((flights) => {
+          setDestinations(flights.map(flightMapper));
+          setNewDestination({
+            origin: "",
+            destination: "",
+            departureTime: "",
+            departureDate: "",
+            duration: "",
+          });
         });
-      })
     } else {
       alert("Please fill out all fields");
     }
@@ -109,9 +111,7 @@ function DestSection() {
             <li>
               <Link to="/Airport">Airports</Link>
             </li>
-            <li>
-              <Link to="/Airline">Airlines</Link>
-            </li>
+
             <li>
               <Link to="/login" className="btn-login">
                 Sign Up
@@ -144,6 +144,11 @@ function DestSection() {
                   </p>
                   <p>
                     Duration: <span>{dest.duration}</span>
+                  </p>
+                  <p>
+                    <button href="#" className="btnDelete">
+                      Delete Destination
+                    </button>
                   </p>
                 </li>
               ))}
