@@ -21,7 +21,7 @@ function DashbordAdmin() {
               <Link to="/OffersAdmin">Offers</Link>
             </li>
             <li>
-              <Link to="/DestinationsAdmin">Destinations</Link>
+              <Link to="/DestAdmin">Destinations</Link>
             </li>
             <li>
               <Link to="/login" className="btn-login">

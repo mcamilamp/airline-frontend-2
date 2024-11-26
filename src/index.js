@@ -13,6 +13,7 @@ import Reservation from "./assets/pages/User/Reservation/Reservation";
 import AdminDashbord from "./assets/pages/Admin/Dashbord/AdminDashbord";
 import UserAdmin from "./assets/pages/Admin/UsersAdmin/UserAdmin";
 import ReservationAdmin from "./assets/pages/Admin/ReservationAdmin/ReservationAdmin";
+import DestAdmin from "./assets/pages/Admin/DestAdmin/DestAdmin";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: "/ReservationAdmin",
     element: <ReservationAdmin />,
+  },
+  {
+    path: "/DestAdmin",
+    element: <DestAdmin />,
   },
 ]);
 
