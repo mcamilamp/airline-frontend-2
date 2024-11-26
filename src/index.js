@@ -15,6 +15,7 @@ import UserAdmin from "./assets/pages/Admin/UsersAdmin/UserAdmin";
 import ReservationAdmin from "./assets/pages/Admin/ReservationAdmin/ReservationAdmin";
 import DestAdmin from "./assets/pages/Admin/DestAdmin/DestAdmin";
 import SignUpForm from "./assets/pages/Login/components/signoutForm/SignUpForm";
+import Airport from "./assets/pages/Admin/AirportsAdmin/Airport";
 
 const router = createBrowserRouter([
   {
@@ -67,8 +68,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <SignUpForm />
-  }
+    element: <SignUpForm />,
+  },
+  {
+    path: "/Airport",
+    element: <Airport />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
