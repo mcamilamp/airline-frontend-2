@@ -6,7 +6,7 @@ import {jwtDecode} from 'jwt-decode';
 function isTokenExpired(token) {
     try {
         const decoded = jwtDecode(token);
-        const currentTime = Math.floor(Date.now()); // Current time in milliseconds
+        const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
         return decoded.exp < currentTime; // True if expired
     } catch (error) {
         console.error("Invalid token:", error);
@@ -41,7 +41,8 @@ export default class Auth {
             })
     }
     isAuthenticated() {
-        return this.getUser() != null && !isTokenExpired(this.getAuthToken())
+        let authToken = this.getAuthToken();
+        return authToken != null && !isTokenExpired(authToken)
     }
     saveToken(token) {
         window.localStorage.setItem("auth-token", token)

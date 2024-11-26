@@ -6,11 +6,26 @@ import { Requests } from "../../../Login/components/scripts/requests";
 const req = new Requests();
 
 async function getAllFlights() {
-  await req.api.get("/flights").then((res) => res.data);
+  return req.api.get("/flights").then((res) => res.data);
 }
 
-async function addFlights(flight) {
-  await req.api.post("/flights", flight);
+async function addFlight(flight) {
+  return req.api.post("/flights", flight).then((res) => res.data)
+}
+
+async function getAirport(code) {
+  return req.api.get("/airports/find/code/" + code).then((res) => res.data)
+}
+
+function flightMapper(flight) {
+  return {
+    id: flight.idFlight,
+    origin: flight.origin.city,
+    destination: flight.destination.city,
+    departureTime: flight.departureTime,
+    departureDate: flight.departureDate,
+    duration: flight.duration,
+  }
 }
 
 function DestSection() {
@@ -19,14 +34,15 @@ function DestSection() {
     const fetchData = async () => {
       try {
         const result = await getAllFlights();
-        setDestinations(result);
+        console.log(result)
+        setDestinations(result.map(flightMapper));
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchData();
-  });
+  }, []);
 
   const [newDestination, setNewDestination] = useState({
     origin: "",
@@ -41,7 +57,7 @@ function DestSection() {
     setNewDestination({ ...newDestination, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       newDestination.origin &&
@@ -50,14 +66,21 @@ function DestSection() {
       newDestination.departureDate &&
       newDestination.duration
     ) {
-      setDestinations(getAllFlights);
-      setNewDestination({
-        origin: "",
-        destination: "",
-        departureTime: "",
-        departureDate: "",
-        duration: "",
-      });
+      const body = {...newDestination}
+      body.origin =  await getAirport(newDestination.origin)
+      body.destination = await getAirport(newDestination.destination)
+      console.log(body)
+
+      addFlight(body).then(flight => getAllFlights()).then(flights => {
+        setDestinations(flights.map(flightMapper));
+        setNewDestination({
+          origin: "",
+          destination: "",
+          departureTime: "",
+          departureDate: "",
+          duration: "",
+        });
+      })
     } else {
       alert("Please fill out all fields");
     }
