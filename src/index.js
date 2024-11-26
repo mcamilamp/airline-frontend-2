@@ -9,6 +9,7 @@ import BookFlight from "./assets/pages/User/BookFlight/BookFlight";
 import OfferPage from "./assets/pages/User/Offers/OfferPage";
 import Tickets from "./assets/pages/User/Tickets/Tickets";
 import Profile from "./assets/pages/User/Profile/Profile";
+import Reservation from "./assets/pages/User/Reservation/Reservation";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/Profile",
     element: <Profile />,
+  },
+  {
+    path: "/Reservation",
+    element: <Reservation />,
   },
 ]);
 
