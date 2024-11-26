@@ -5,6 +5,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { CgMenuGridO } from "react-icons/cg";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Auth from "../../pages/Login/components/scripts/auth";
 
 function NavBar() {
   const location = useLocation();
@@ -12,6 +13,12 @@ function NavBar() {
     location.pathname.startsWith("/Tickets") ||
     location.pathname === "/Profile";
   const [isScrolled, setIsScrolled] = useState(false);
+  let isAuthenticated = false;
+
+  const auth = new Auth()
+  if (auth.isAuthenticated()) {
+    isAuthenticated = false;
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,12 +68,17 @@ function NavBar() {
               </Link>
             </li>
             <div className="headerBtns flex">
-              <button className="btn loginBtn">
-                <Link to="/login">Sign in</Link>
-              </button>
+              {
+                  isAuthenticated &&
+                  (<button className="btn loginBtn">
+                    <Link to="/login">Sign in</Link>
+                  </button>)
+              }
+              {/*
               <button className="btn logupBtn">
                 <Link to="/login">Sign Up</Link>
               </button>
+              */}
             </div>
           </ul>
           <div onClick={removeNav} className="closeNavBar">

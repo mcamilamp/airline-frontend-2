@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Auth from "../scripts/auth"
+import {redirect} from "react-router-dom";
 
 function SigninForm() {
   const [username, setUsername] = useState("");
@@ -19,6 +20,7 @@ function SigninForm() {
       }
 
       const response = await auth.login(userData);
+      redirect("/principalPage")
       console.log(response)
     } catch (e) {
       console.log(e)

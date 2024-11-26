@@ -20,7 +20,7 @@ export default class Auth {
                 console.log("User logged in successfully:")
                 console.log(res)
                 this.saveToken(res.data.token)
-                this.saveUserId(res.data.userId)
+                this.saveUser(res.data.user)
                 return res
             })
             .catch(err => {
@@ -29,18 +29,22 @@ export default class Auth {
             })
     }
     isAuthenticated() {
-        return this.getUserId() != null
+        return this.getUser() != null
     }
     saveToken(token) {
         window.localStorage.setItem("auth-token", token)
     }
-    saveUserId(userId) {
-        window.localStorage.setItem("auth-user-id", userId)
+    saveUser(user) {
+        window.localStorage.setItem("auth-user", JSON.stringify(user))
     }
     getAuthToken() {
         return window.localStorage.getItem("auth-token")
     }
-    getUserId() {
-        return window.localStorage.getItem("auth-user-id")
+    getUser() {
+        return JSON.parse(window.localStorage.getItem("auth-user"))
+    }
+
+    ensureAuthenticated(req) {
+
     }
 }
