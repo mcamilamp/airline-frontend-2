@@ -8,8 +8,9 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   const location = useLocation();
-  const isTicketsPage = location.pathname.startsWith("/Tickets/");
-
+  const isSpecialPage =
+    location.pathname.startsWith("/Tickets") ||
+    location.pathname === "/Profile";
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ function NavBar() {
     <section className="navBarSection">
       <div
         className={`header ${isScrolled ? "scrolled" : ""} ${
-          isTicketsPage ? "ticketsPage" : ""
+          isSpecialPage ? "specialPage" : ""
         }`}
       >
         <div className="logoDiv">

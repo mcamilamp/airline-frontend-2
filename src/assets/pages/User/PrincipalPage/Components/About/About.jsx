@@ -3,6 +3,7 @@ import "../About/About.scss";
 import { GrMoney } from "react-icons/gr";
 import { BiWorld } from "react-icons/bi";
 import { FaHandHoldingHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import video from "../../../../../video/video.mp4";
 
@@ -48,7 +49,7 @@ function About() {
               service. Your ideal trip is just a flight away!
             </p>
             <button className="btn">
-              <a href="#">Explore</a>
+              <Link to="/BookFlight">Explore</Link>
             </button>
           </div>
         </div>

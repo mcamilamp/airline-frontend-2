@@ -8,6 +8,7 @@ import FamDest from "./assets/pages/User/PrincipalPage/Components/FamousDestinat
 import BookFlight from "./assets/pages/User/BookFlight/BookFlight";
 import OfferPage from "./assets/pages/User/Offers/OfferPage";
 import Tickets from "./assets/pages/User/Tickets/Tickets";
+import Profile from "./assets/pages/User/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/Tickets/:destination",
     element: <Tickets />,
+  },
+  {
+    path: "/Profile",
+    element: <Profile />,
   },
 ]);
 

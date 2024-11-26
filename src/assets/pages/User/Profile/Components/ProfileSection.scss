@@ -1,0 +1,63 @@
+@use "../../../../styles/main.scss" as m;
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+.profile {
+  margin-top: 8.4rem;
+}
+
+.profile-header {
+  text-align: center;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 25px;
+  background: m.$grey;
+}
+
+.profile-content {
+  margin-top: 20px;
+}
+
+.profile-card {
+  background: #ffffff;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+}
+
+.profile-name {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.profile-item {
+  margin: 10px 0;
+  text-align: left;
+  color: #555;
+  font-size: 14px;
+}
+
+.profile-item strong {
+  font-weight: bold;
+}
+
+.profile-item p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    width: 90%;
+    padding: 20px;
+  }
+}
