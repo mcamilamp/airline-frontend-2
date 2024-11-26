@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SigninForm from "./components/signinForm/SigninForm";
-import SignoutForm from "./components/signoutForm/SignoutForm";
+import SignUpForm from "./components/signoutForm/SignUpForm";
 import "./Login.scss";
 import { LuPlaneTakeoff } from "react-icons/lu";
 
@@ -23,7 +23,7 @@ function Login() {
           id="main"
         >
           <div className="sign-up">
-            <SignoutForm />
+            <SignUpForm />
           </div>
           <div className="sign-in">
             <SigninForm />

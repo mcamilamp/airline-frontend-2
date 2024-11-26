@@ -1,15 +1,16 @@
 import React, {useState} from "react";
-import Auth from "../scripts/auth"
+import axios from "axios";
+import Auth from "../scripts/auth";
 
-function SigninForm() {
+function SignUpForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
-  const auth = new Auth()
   async function handleSubmit(e) {
     e.preventDefault();
 
+    const auth = new Auth();
     try {
       const userData = {
         username,
@@ -18,7 +19,7 @@ function SigninForm() {
         roles: "ROLE_USER"
       }
 
-      const response = await auth.login(userData);
+      const response = await auth.createUser(userData);
       console.log(response)
     } catch (e) {
       console.log(e)
@@ -28,25 +29,33 @@ function SigninForm() {
   return (
     <div>
       <form action="#" onSubmit={handleSubmit}>
-        <h1>Sign In</h1>
-        <p>Use your account</p>
+        <h1>Create Account</h1>
+        <p>Use your email for registration</p>
+        <input type="text"
+               name="txt"
+               placeholder="Name"
+               value={username}
+               onChange={e => setUsername(e.target.value)}
+               required />
+
         <input type="email"
                name="email"
                placeholder="Email"
                value={email}
-               onChange={(e) => setEmail(e.target.value)}
+               onChange={e => setEmail(e.target.value)}
                required />
+
         <input type="password"
                name="pswd"
                placeholder="Password"
                value={password}
-               onChange={(e) => setPassword(e.target.value)}
+               onChange={e => setPassword(e.target.value)}
                required />
-        <a href="#">Forget your password?</a>
-        <button type={"submit"}>Sign In</button>
+
+        <button type={"submit"}>Sign Up</button>
       </form>
     </div>
   );
 }
 
-export default SigninForm;
+export default SignUpForm;
