@@ -17,6 +17,10 @@ async function getAirport(code) {
   return req.api.get("/airports/find/code/" + code).then((res) => res.data);
 }
 
+async function deleteFlight(id) {
+  return req.api.delete("/flights/" + id).then((res) => res.data);
+}
+
 function flightMapper(flight) {
   return {
     id: flight.idFlight,
@@ -88,6 +92,12 @@ function DestSection() {
     }
   };
 
+  const handleDelete = id => {
+    deleteFlight(id)
+        .then(() => getAllFlights())
+        .then((flights) => setDestinations(flights));
+  }
+
   return (
     <div className="destSection">
       <aside className="sidebar">
@@ -146,7 +156,7 @@ function DestSection() {
                     Duration: <span>{dest.duration}</span>
                   </p>
                   <p>
-                    <button href="#" className="btnDelete">
+                    <button href="#" className="btnDelete" onClick={() => handleDelete(dest.id)}>
                       Delete Destination
                     </button>
                   </p>
