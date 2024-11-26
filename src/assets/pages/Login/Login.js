@@ -48,7 +48,6 @@ function Login() {
                   Join our <span>airline</span> and start enjoying a unique
                   flight experience with exclusive benefits.
                 </p>
-                <LuPlaneTakeoff size={"30px"} />
 
                 <button id="signUp" onClick={handleSignUpClick}>
                   Sign Up
