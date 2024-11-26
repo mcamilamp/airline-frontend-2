@@ -55,11 +55,14 @@ function ReservSection() {
             <li>
               <Link to="/ReservationAdmin">Reservations</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/OffersAdmin">Offers</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/DestAdmin">Destinations</Link>
+            </li>
+            <li>
+              <Link to="/Airport">Airports</Link>
             </li>
             <li>
               <Link to="/login" className="btn-login">

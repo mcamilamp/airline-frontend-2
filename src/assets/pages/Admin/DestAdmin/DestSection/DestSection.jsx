@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../DestSection/DestSection.scss";
 import { Link } from "react-router-dom";
-import {Requests} from "../../../Login/components/scripts/requests";
+import { Requests } from "../../../Login/components/scripts/requests";
 
-const req = new Requests()
+const req = new Requests();
 
 async function getAllFlights() {
-  await req.api.get("/flights").then((res) => res.data)
+  await req.api.get("/flights").then((res) => res.data);
 }
 
 async function addFlights(flight) {
-  await req.api.post("/flights", flight)
+  await req.api.post("/flights", flight);
 }
 
 function DestSection() {
@@ -18,15 +18,15 @@ function DestSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await getAllFlights()
-        setDestinations(result)
+        const result = await getAllFlights();
+        setDestinations(result);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    }
+    };
 
-    fetchData()
-  })
+    fetchData();
+  });
 
   const [newDestination, setNewDestination] = useState({
     origin: "",
@@ -50,7 +50,6 @@ function DestSection() {
       newDestination.departureDate &&
       newDestination.duration
     ) {
-
       setDestinations(getAllFlights);
       setNewDestination({
         origin: "",
@@ -78,11 +77,14 @@ function DestSection() {
             <li>
               <Link to="/ReservationAdmin">Reservations</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/OffersAdmin">Offers</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/DestAdmin">Destinations</Link>
+            </li>
+            <li>
+              <Link to="/Airport">Airports</Link>
             </li>
             <li>
               <Link to="/login" className="btn-login">
