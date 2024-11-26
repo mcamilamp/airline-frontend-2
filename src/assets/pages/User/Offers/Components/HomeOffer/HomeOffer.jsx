@@ -3,7 +3,7 @@ import "../HomeOffer/HomeOffer.scss";
 
 function HomeOffer() {
   return (
-    <section className="homeFlight">
+    <section className="homeOffer">
       <div className="secContainer containerr">
         <div className="homeText">
           <h1 className="title">Find the best flights at the best price</h1>

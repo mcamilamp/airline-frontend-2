@@ -1,5 +1,6 @@
 import React from "react";
 import "../PrincipalDestinations/PrincDest.scss";
+import { useNavigate } from "react-router-dom";
 
 import item1 from "../../../../../img/item1.jpg";
 import item2 from "../../../../../img/item2.jpg";
@@ -49,12 +50,18 @@ const items = [
 ];
 
 function PrincDest() {
+  const navigate = useNavigate();
+
   return (
     <section className="container" id="principalDestinations">
       <h2>Main destinations</h2>
       <div className="items">
-        {items.map(({ image, title, price }, index) => (
-          <div className="item">
+        {items.map(({ id, image, title, price }, index) => (
+          <div
+            className="item"
+            key={id}
+            onClick={() => navigate(`/Tickets/${title}`)}
+          >
             <div className="itemImage">
               <img src={image} alt={title} />
             </div>

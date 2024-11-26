@@ -1,0 +1,162 @@
+@use "../../../../../styles/main.scss" as m;
+
+.aside-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  padding-top: 6.4rem;
+  min-height: 100vh;
+
+  aside {
+    width: 250px;
+    background: m.$grey;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .aside-title {
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: m.$bluePrincipal;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+    .aside-info {
+      margin-bottom: 1.5rem;
+
+      .aside-img {
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          margin-bottom: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        color: m.$teal;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #3b3b3b;
+
+        span {
+          font-weight: bold;
+          color: m.$bluePrincipal;
+        }
+      }
+    }
+  }
+
+  .tickets {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 20px;
+    background: white;
+
+    .ticket-item {
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      box-shadow: 0 2px 5px 2px rgba(136, 136, 136, 0.334);
+      border-radius: 10px;
+      padding: 10px;
+      margin: 2rem;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      align-items: stretch;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .origin,
+      .destination,
+      .inter,
+      .price {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .origin,
+      .destination {
+        text-align: center;
+
+        h2 {
+          font-size: 1.2rem;
+          color: m.$bluePrincipal;
+          margin-bottom: 0.3rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: m.$bluePrincipal;
+        }
+      }
+
+      .inter {
+        text-align: center;
+        color: m.$bluePrincipal;
+
+        .plane {
+          color: m.$babyBlue;
+        }
+
+        p {
+          margin: 0.5rem 0;
+
+          &:last-of-type {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            gap: 0.5rem;
+            color: m.$bluePrincipal;
+
+            svg {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .price {
+        text-align: center;
+        background: linear-gradient(135deg, m.$bluePrincipal, m.$teal);
+        padding: 20px;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 0;
+
+        p {
+          font-size: 1.3rem;
+          font-weight: bolder;
+          color: m.$white;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

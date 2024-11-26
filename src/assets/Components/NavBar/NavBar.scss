@@ -11,6 +11,16 @@
     padding: 16px;
     z-index: 1000;
 
+    &.ticketsPage {
+      background: m.$babyBlue;
+      color: m.$white;
+
+      .loginBtn,
+      .logupBtn {
+        background: m.$bluePrincipal;
+      }
+    }
+
     &.scrolled {
       background: m.$babyBlue;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);

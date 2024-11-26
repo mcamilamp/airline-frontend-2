@@ -4,6 +4,7 @@ import { FaPlane } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -11,11 +12,11 @@ function Footer() {
       <div className="secContainer container grid">
         <div className="logoDiv">
           <div className="footerLogo">
-            <a href="#" className="logo">
+            <Link to="/principalPage" className="navLink logo">
               <h1 className="flex">
                 <FaPlane className="icon" /> AirPlane
               </h1>
-            </a>
+            </Link>
           </div>
 
           <div className="socials flex">

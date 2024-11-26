@@ -3,10 +3,15 @@ import "../NavBar/NavBar.scss";
 import { FaPlane } from "react-icons/fa6";
 import { IoMdCloseCircle } from "react-icons/io";
 import { CgMenuGridO } from "react-icons/cg";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavBar() {
-  // menu cuando se desplaza hacia abajo
+  const location = useLocation();
+  const isTicketsPage = location.pathname.startsWith("/Tickets/");
+
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -18,69 +23,55 @@ function NavBar() {
     };
   }, []);
 
-  // menu cuando esta en modo telefono
   const [active, setActive] = useState("navBar");
-  const showNav = () => {
-    setActive("navBar activeNavbar");
-  };
-
-  const removeNav = () => {
-    setActive("navBar");
-  };
-  //
+  const showNav = () => setActive("navBar activeNavbar");
+  const removeNav = () => setActive("navBar");
 
   return (
     <section className="navBarSection">
-      <div className={`header ${isScrolled ? "scrolled" : ""}`}>
+      <div
+        className={`header ${isScrolled ? "scrolled" : ""} ${
+          isTicketsPage ? "ticketsPage" : ""
+        }`}
+      >
         <div className="logoDiv">
-          <a href="#" className="logo">
+          <Link to="/principalPage" className="logo navLink">
             <h1 className="flex">
               <FaPlane className="icon" />
               AirLine
             </h1>
-          </a>
+          </Link>
         </div>
         <div className={active}>
           <ul className="navList flex">
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/principalPage" className="navLink">
                 Home
-              </a>
+              </Link>
             </li>
-
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/OfferPage" className="navLink">
                 Offers
-              </a>
+              </Link>
             </li>
-
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/BookFlight" className="navLink">
                 Destinations
-              </a>
+              </Link>
             </li>
-
-            <li className="navItem">
-              <a href="#" className="navLink">
-                Contacts
-              </a>
-            </li>
-
             <div className="headerBtns flex">
               <button className="btn loginBtn">
-                <a href="#">Sign in</a>
+                <Link to="/login">Sign in</Link>
               </button>
               <button className="btn logupBtn">
-                <a href="#">Sign Up</a>
+                <Link to="/login">Sign Up</Link>
               </button>
             </div>
           </ul>
-
           <div onClick={removeNav} className="closeNavBar">
             <IoMdCloseCircle className="icon" />
           </div>
         </div>
-
         <div onClick={showNav} className="toggleNavBar">
           <CgMenuGridO className="icon" />
         </div>

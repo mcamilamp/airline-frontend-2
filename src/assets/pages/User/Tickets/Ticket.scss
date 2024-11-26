@@ -1,0 +1,61 @@
+// @use "../../../../../styles/main.scss" as m;
+
+// .layout-container {
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+//   width: 100%;
+//   margin: 0;
+//   padding: 0;
+
+//   .aside-section {
+//     width: 250px;
+//     background: m.$grey;
+//     padding: 20px;
+//     border-right: 1px solid #ddd;
+//     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+//   }
+
+//   .ticket-section {
+//     flex: 1;
+//     background: m.$white;
+//     padding: 20px;
+//     border-left: 1px solid #ddd;
+
+//     .tickets {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 20px;
+
+//       .ticket-item {
+//         background: m.$lightGrey;
+//         padding: 15px;
+//         border-radius: 8px;
+//         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+//         .origin,
+//         .destination {
+//           h2 {
+//             font-size: 1.5rem;
+//             color: m.$teal;
+//           }
+//         }
+
+//         .inter {
+//           display: flex;
+//           justify-content: space-between;
+//           align-items: center;
+//           p {
+//             margin: 0;
+//             font-size: 0.9rem;
+//             color: m.$darkGrey;
+//           }
+//           svg {
+//             font-size: 1.2rem;
+//             color: m.$bluePrincipal;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
