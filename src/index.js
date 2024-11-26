@@ -10,6 +10,8 @@ import OfferPage from "./assets/pages/User/Offers/OfferPage";
 import Tickets from "./assets/pages/User/Tickets/Tickets";
 import Profile from "./assets/pages/User/Profile/Profile";
 import Reservation from "./assets/pages/User/Reservation/Reservation";
+import AdminDashbord from "./assets/pages/Admin/Dashbord/AdminDashbord";
+import UserAdmin from "./assets/pages/Admin/UsersAdmin/UserAdmin";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
   {
     path: "/Reservation",
     element: <Reservation />,
+  },
+  {
+    path: "/AdminDashbord",
+    element: <AdminDashbord />,
+  },
+  {
+    path: "/UserAdmin",
+    element: <UserAdmin />,
   },
 ]);
 

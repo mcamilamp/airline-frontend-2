@@ -1,6 +1,7 @@
 import React from "react";
 import "../AsideTicket/AsideTicket.scss";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import item1 from "../../../../../img/item1.jpg";
 import item2 from "../../../../../img/item2.jpg";
@@ -290,7 +291,7 @@ function AsideTickets() {
               },
               index
             ) => (
-              <a href="#">
+              <Link to="/Reservation" className="navLink">
                 <div className="ticket-item" key={idFlight || index}>
                   <div className="origin">
                     <h2>{origin}</h2>
@@ -312,7 +313,7 @@ function AsideTickets() {
                     <p>{price}</p>
                   </div>
                 </div>
-              </a>
+              </Link>
             )
           )}
       </div>

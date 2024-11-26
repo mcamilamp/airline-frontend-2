@@ -1,0 +1,118 @@
+@use "../../../../styles/main.scss" as m;
+
+.admin-users {
+  display: flex;
+  font-family: m.$principalFont;
+  color: m.$bluePrincipal;
+  height: 100vh;
+
+  .sidebar {
+    width: 250px;
+    background-color: m.$bluePrincipal;
+    color: m.$white;
+    box-shadow: m.$boxShadow;
+    padding: 1rem;
+
+    nav {
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin: 1rem 0;
+
+          a {
+            color: m.$white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+
+            &:hover {
+              color: m.$babyBlue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .user-section {
+    margin-left: 1rem;
+    flex: 1;
+
+    .title-h2 {
+      margin-top: 2rem;
+    }
+    .user-list,
+    .add-user {
+      background-color: m.$grey;
+      border-radius: 8px;
+      box-shadow: m.$boxShadow;
+      margin: 25px 0;
+      padding: 20px;
+      width: 100%;
+      max-width: 90%;
+
+      h2 {
+        margin-bottom: 15px;
+        color: m.$darkBlue;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px;
+          background-color: m.$white;
+          margin-bottom: 10px;
+          border-radius: 4px;
+          box-shadow: m.$boxShadow;
+
+          p {
+            margin: 1rem;
+
+            span {
+              &:first-child {
+                font-weight: 600;
+                margin-left: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid m.$bluePrincipal;
+        border-radius: 4px;
+        font-family: m.$principalFont;
+      }
+
+      button {
+        background-color: m.$teal;
+        color: m.$white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        width: 100%;
+
+        &:hover {
+          background-color: m.$darkBlue;
+        }
+      }
+    }
+  }
+}
