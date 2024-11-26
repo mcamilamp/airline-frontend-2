@@ -9,13 +9,19 @@ function DashbordAdmin() {
         <nav>
           <ul>
             <li>
-              <a href="#users">Users</a>
+              <Link to="/AdminDashbord">Home</Link>
             </li>
             <li>
-              <a href="#reservations">Reservations</a>
+              <Link to="/UserAdmin">Users</Link>
             </li>
             <li>
-              <a href="#offers">Offers</a>
+              <Link to="/ReservationAdmin">Reservations</Link>
+            </li>
+            <li>
+              <Link to="/OffersAdmin">Offers</Link>
+            </li>
+            <li>
+              <Link to="/DestinationsAdmin">Destinations</Link>
             </li>
             <li>
               <Link to="/login" className="btn-login">
@@ -30,8 +36,10 @@ function DashbordAdmin() {
         <h2>Welcome to the Administration Panel</h2>
         <p>Manage your operations with efficiency and total control.</p>
         <section id="users" className="dashboard-section">
-          <h2>Users</h2>
-          <button className="btn btn-create">Create User</button>
+          <Link to="/UserAdmin">
+            <h2>Users</h2>
+            {/* <button className="btn btn-create">Create User</button> */}
+          </Link>
         </section>
 
         <section id="reservations" className="dashboard-section">

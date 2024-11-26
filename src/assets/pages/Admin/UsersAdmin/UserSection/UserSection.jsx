@@ -17,13 +17,19 @@ function UserSection() {
         <nav>
           <ul>
             <li>
-              <a href="#users">Users</a>
+              <Link to="/AdminDashbord">Home</Link>
             </li>
             <li>
-              <a href="#reservations">Reservations</a>
+              <Link to="/UserAdmin">Users</Link>
             </li>
             <li>
-              <a href="#offers">Offers</a>
+              <Link to="/ReservationAdmin">Reservations</Link>
+            </li>
+            <li>
+              <Link to="/OffersAdmin">Offers</Link>
+            </li>
+            <li>
+              <Link to="/DestinationsAdmin">Destinations</Link>
             </li>
             <li>
               <Link to="/login" className="btn-login">
