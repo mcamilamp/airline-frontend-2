@@ -1,6 +1,18 @@
 import axios from "axios"
 import {baseUrl} from "./shared";
 import {Component} from "react";
+import {jwtDecode} from 'jwt-decode';
+
+function isTokenExpired(token) {
+    try {
+        const decoded = jwtDecode(token);
+        const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
+        return decoded.exp < currentTime; // True if expired
+    } catch (error) {
+        console.error("Invalid token:", error);
+        return true; // Consider invalid tokens as expired
+    }
+}
 
 export default class Auth {
     createUser(user) {
@@ -29,7 +41,7 @@ export default class Auth {
             })
     }
     isAuthenticated() {
-        return this.getUser() != null
+        return this.getUser() != null && !isTokenExpired(this.getAuthToken())
     }
     saveToken(token) {
         window.localStorage.setItem("auth-token", token)
@@ -45,6 +57,5 @@ export default class Auth {
     }
 
     ensureAuthenticated(req) {
-
     }
 }
