@@ -49,7 +49,7 @@ function AirportSection() {
         newAirport.name &&
         newAirport.city &&
         newAirport.country &&
-        newAirport.code
+        newAirport.iataCode
     ) {
       const body = { ...newAirport };
       console.log(body);
@@ -62,6 +62,7 @@ function AirportSection() {
               city: "",
               country: "",
               name: "",
+              iataCode: "",
             });
           });
     } else {
@@ -79,6 +80,7 @@ function AirportSection() {
     city: "",
     country: "",
     name: "",
+    iataCode: "",
   });
   
   const handleChange = (e) => {
@@ -174,7 +176,7 @@ function AirportSection() {
             <label htmlFor="">
               Code: <input type="text"
                            onChange={handleChange}
-                           name="code"/>
+                           name="iataCode"/>
             </label>
 
             <button type="submit" className="btn">
